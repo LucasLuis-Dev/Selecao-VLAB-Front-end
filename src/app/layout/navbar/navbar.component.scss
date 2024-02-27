@@ -1,0 +1,43 @@
+@import "../../../scss/abstracts/variables";
+
+.navbar {
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem $padding-sides;
+
+        &-logo {
+            width: 20%;
+            &-img {
+                width: 100%;
+            }
+        }
+
+        &-user {
+            width: 3%;
+            &-icon {
+                width: 100%;
+                fill: white;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            &-logo {
+                width: 50%;
+                &-img {
+                    width: 100%;
+                }
+            }
+    
+            &-user {
+                width: 9.5%;
+                &-icon {
+                    width: 100%;
+                    fill: white;
+                }
+            }
+        }
+    }
+}
+
