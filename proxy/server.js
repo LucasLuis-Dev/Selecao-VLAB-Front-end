@@ -1,11 +1,20 @@
-var host = "localhost";
-var port = 4123;
+const express = require('express');
 
-var cors_proxy = require('cors-anywhere');
-cors_proxy.createServer({
-    originWhitelist: [], // Allow all origins
-    requireHeader: ['origin', 'x-requested-with'],
-    removeHeaders: ['cookie', 'cookie2']
-}).listen(port, host, function() {
-    console.log('Running CORS Anywhere on ' + host + ':' + port);
+const app = express();
+const port = 4123;
+
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Request-Method', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET');
+  res.setHeader('Access-Control-Allow-Headers', '*');
+  next();
+});
+
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}/`);
 });
