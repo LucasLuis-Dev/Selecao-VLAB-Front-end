@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class GamesService {
 
-  baseUrl = "http://localhost:4123/https://www.freetogame.com/api/";
+  baseUrl = "http://localhost:4123/";
 
   constructor(private http: HttpClient) { 
     

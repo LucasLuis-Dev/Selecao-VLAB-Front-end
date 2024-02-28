@@ -1,0 +1,9 @@
+@import "../../../scss/abstracts/variables";
+
+.home {
+    &__container {
+       display: flex;
+       flex-direction: column;
+       padding: 1rem $padding-sides; 
+    }
+}
