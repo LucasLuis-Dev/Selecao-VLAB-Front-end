@@ -8,10 +8,12 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { LayoutModule } from './layout/layout.module';
 import { HomeModule } from './pages/home/home.module';
+import { GameDetailsComponent } from './pages/game-details/game-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    GameDetailsComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,7 +4,7 @@
     &__container {
         list-style: none;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(27rem, 1fr));
         gap: 2rem;
 
 
@@ -14,32 +14,36 @@
             flex-direction: column;
             gap: 1rem;
 
-            &-img {
-                border-radius: .8rem;
-                width: 100%;
-            }
+            &-link {
+                text-decoration: none;
+                color: $color-white;
 
-            &-description {
-                display: flex;
-                justify-content: space-between;
-
-                &-title {
-                    color: $color-white;
-                    font-weight: 500;
+                &-img {
+                    border-radius: .8rem;
+                    width: 100%;
                 }
     
-                &-button {
-                    width: fit-content;
-                    background-color: $color-highlight;
-                    color: white;
-                    border: none;
-                    border-radius: .5rem;
-                    padding: .5rem;
-                    font-weight: 600;
+                &-description {
+                    display: flex;
+                    justify-content: space-between;
+    
+                    &-title {
+                        color: $color-white;
+                        font-weight: 500;
+                    }
+        
+                    &-button {
+                        width: fit-content;
+                        background-color: $color-highlight;
+                        color: white;
+                        border: none;
+                        border-radius: .5rem;
+                        padding: .5rem;
+                        font-weight: 600;
+                        font-size: 1.1rem;
+                    }
                 }
-            }
-
-            
+            }            
         }
     }
 }

@@ -1,9 +1,12 @@
 <ul class="list-games__container">
     <li class="list-games__container-item" *ngFor="let game of gamesList">
-        <img class="list-games__container-item-img" src="{{ game.thumbnail }}" alt="">
-        <div class="list-games__container-item-description">
-            <p class="list-games__container-item-description-title">{{ game.title }}</p>
-            <button class="list-games__container-item-description-button">FREE</button>
-        </div>
+        <a class="list-games__container-item-link" [routerLink]="['/gameDetail', game.id]">
+            <img class="list-games__container-item-link-img" src="{{ game.thumbnail }}" alt="">
+            <div class="list-games__container-item-link-description">
+                <p class="llist-games__container-item-link-description-title">{{ game.title }}</p>
+                <button class="list-games__container-item-link-description-button">FREE</button>
+            </div>
+        </a>
+        
     </li>
 </ul>

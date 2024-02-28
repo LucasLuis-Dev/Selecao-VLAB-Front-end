@@ -8,11 +8,13 @@ export class GamesService {
 
   baseUrl = "http://localhost:4123/";
 
-  constructor(private http: HttpClient) { 
-    
-  }
+  constructor(private http: HttpClient) { }
 
   getAllGames() {
     return this.http.get(this.baseUrl + "games");
+  }
+
+  getGameByID(gameID: string) {
+    return this.http.get(this.baseUrl + "games/" + gameID)
   }
 }

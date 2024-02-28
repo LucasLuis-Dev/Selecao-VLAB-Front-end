@@ -24,7 +24,19 @@ app.get('/games', async (req, res) => {
       console.error('Erro ao obter os jogos:', error);
       res.status(500).json({ error: 'Erro ao obter os jogos' });
     }
-  });
+});
+
+app.get('/games/:id', async (req, res) => {
+  const gameId = req.params.id;
+
+  try {
+    const response = await axios.get(`https://www.freetogame.com/api/game?id=${gameId}`);
+    res.json(response.data);
+  } catch (error) {
+    console.error('Erro ao obter os dados do jogo:', error);
+    res.status(500).json({ error: 'Erro ao obter o jogo' });
+  }
+});
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
