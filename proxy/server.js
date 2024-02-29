@@ -38,6 +38,18 @@ app.get('/games/:id', async (req, res) => {
   }
 });
 
+app.get('/games/category/:category', async (req, res) => {
+  const category = req.params.category;
+
+  try {
+    const response = await axios.get(`https://www.freetogame.com/api/games?category=${category}`);
+    res.json(response.data);
+  } catch (error) {
+    console.error('Erro ao obter os jogos por categoria:', error);
+    res.status(500).json({ error: 'Erro ao obter os jogos por categoria' });
+  }
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
 });
