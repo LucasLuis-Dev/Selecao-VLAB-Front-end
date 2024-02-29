@@ -9,17 +9,18 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { LayoutModule } from './layout/layout.module';
 import { HomeModule } from './pages/home/home.module';
 import { GameDetailsComponent } from './pages/game-details/game-details.component';
+import { GameDetailsModule } from './pages/game-details/game-details.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GameDetailsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     LayoutModule,
-    HomeModule
+    HomeModule,
+    GameDetailsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

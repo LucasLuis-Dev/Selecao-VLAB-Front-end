@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { GamesService } from '../../services/games/games.service';
 
 @Component({
@@ -7,6 +7,8 @@ import { GamesService } from '../../services/games/games.service';
   styleUrl: './list-games.component.scss'
 })
 export class ListGamesComponent implements OnInit {
+
+  @Input() filter: string = '';
 
   gamesList: any[] = [];
 
