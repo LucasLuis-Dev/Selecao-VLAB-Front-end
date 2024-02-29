@@ -10,6 +10,8 @@ import { LayoutModule } from './layout/layout.module';
 import { HomeModule } from './pages/home/home.module';
 import { GameDetailsComponent } from './pages/game-details/game-details.component';
 import { GameDetailsModule } from './pages/game-details/game-details.module';
+import { FavoriteGamesComponent } from './pages/favorite-games/favorite-games.component';
+import { FavoriteGamesModule } from './pages/favorite-games/favorite-games.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { GameDetailsModule } from './pages/game-details/game-details.module';
     AppRoutingModule,
     LayoutModule,
     HomeModule,
-    GameDetailsModule
+    GameDetailsModule,
+    FavoriteGamesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

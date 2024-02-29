@@ -1,4 +1,5 @@
 @import "../../../scss/abstracts/variables";
+@import "../../../scss/abstracts/mixins";
 
 .navbar {
     &__container {
@@ -14,11 +15,21 @@
             }
         }
 
+        &-button {
+            @include button;
+            text-decoration: none;
+
+            &-svg {
+                width: 2rem;
+                fill: $color-white;
+            }
+        }
+
         &-user {
             width: 3%;
             &-icon {
                 width: 100%;
-                fill: white;
+                fill: $color-white;
             }
         }
 

@@ -52,7 +52,19 @@ export class GameDetailsComponent implements OnInit {
 
   hasMinimumRequirements(): boolean {
     return this.getObjectKeys(this.selectedGame.minimum_system_requirements).some(key => this.selectedGame.minimum_system_requirements[key] !== null);
-}
+  }
+
+  saveGameToFavorites(game: any) {
+    if (this.isGameFavorite(game)) {
+      this.gamesService.removeGameFromFavorites(game);
+    } else {
+      this.gamesService.saveGameToFavorites(game);
+    }
+  }
+
+  isGameFavorite(game: any): boolean {
+    return this.gamesService.isGameInFavorites(game);
+  }
 
  
 

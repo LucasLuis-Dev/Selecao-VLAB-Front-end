@@ -1,0 +1,15 @@
+@import "../../../scss/abstracts/variables";
+
+.favorite-games {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem $padding-sides;
+
+        &-title {
+            color: $color-white;
+            font-weight: 600;
+        }
+    }
+}
