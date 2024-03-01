@@ -10,6 +10,18 @@ export class HomeComponent implements OnInit {
 
   gamesList: any[] = [];
   selectedOrderGames: string = '';
+  selectedFilterPlatform: string = '';
+  selectedFilterCategory: string = '';
+  selectedFilterDate: string = '';
+  selectedFilterDeveloper: string = '';
+  showModal: boolean = true;
+  categories: string[] = [
+    "mmorpg", "shooter", "strategy", "moba", "racing", "sports", "social", "sandbox", "open-world", "survival",
+    "pvp", "pve", "pixel", "voxel", "zombie", "turn-based", "first-person", "third-Person", "top-down", "tank",
+    "space", "sailing", "side-scroller", "superhero", "permadeath", "card", "battle-royale", "mmo", "mmofps", "mmotps",
+    "3d", "2d", "anime", "fantasy", "sci-fi", "fighting", "action-rpg", "action", "military", "martial-arts", "flight",
+    "low-spec", "tower-defense", "horror", "mmorts"
+  ];
 
   constructor(private gamesService: GamesService) {}
 
@@ -22,6 +34,7 @@ export class HomeComponent implements OnInit {
     this.gamesService.getAllGames().subscribe({
       next: (data: any) => {
         this.gamesList = data;
+        this.applyFilters();
       },
       error: (error: any) => {
         console.error('Erro ao obter a lista de jogos:', error);
@@ -31,11 +44,11 @@ export class HomeComponent implements OnInit {
 
   updateOrder(): void {
     if (this.selectedOrderGames && this.selectedOrderGames !== 'default') {
-      console.log(this.selectedOrderGames)
-      
+
       this.gamesService.getGamesByOrder(this.selectedOrderGames).subscribe({
         next: (data: any) => {
           this.gamesList = data;
+          this.applyFilters();
         },
         error: (error: any) => {
           console.error('Erro ao obter os jogos ordenados:', error);
@@ -46,5 +59,33 @@ export class HomeComponent implements OnInit {
     else {
       this.loadDefaultGames()
     }
+  }
+
+  updateFilter(): void {
+    this.applyFilters();
+  }
+
+  applyFilters(): void {
+    let filteredGames = [...this.gamesList];
+
+    if (this.selectedFilterPlatform) {
+      console.log(this.selectedFilterPlatform)
+      filteredGames = filteredGames.filter(game => game.platform.includes(this.selectedFilterPlatform));
+    }
+
+    if (this.selectedFilterCategory) {
+      filteredGames = filteredGames.filter(game => game.genre.includes(this.selectedFilterCategory));
+    }
+
+    if (this.selectedFilterDate) {
+      filteredGames = filteredGames.filter(game => game.releaseDate === this.selectedFilterDate);
+    }
+
+    if (this.selectedFilterDeveloper) {
+      filteredGames = filteredGames.filter(game => game.developer.includes(this.selectedFilterDeveloper));
+    }
+
+    console.log(filteredGames);
+    this.gamesList = filteredGames;
   }
 }

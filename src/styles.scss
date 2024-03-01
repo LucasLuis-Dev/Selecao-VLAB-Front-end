@@ -19,4 +19,8 @@ body {
         border-radius: 2rem; 
         height: 5rem;
       }
+
+      @media screen and (min-width: 1600px) {
+        zoom: 125%;
+      }
 }

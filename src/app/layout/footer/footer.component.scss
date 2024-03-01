@@ -1,0 +1,37 @@
+@import "../../../scss/abstracts/variables";
+@import "../../../scss/abstracts/mixins";
+
+.footer {
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        padding: 6rem $padding-sides;
+        padding-bottom: 2rem;
+
+        &-figure {
+            width: 22rem;
+
+            &-img {
+                width: 100%;
+            }
+        }
+
+        &-text {
+            @include paragraph;
+        }
+
+        &-links {
+            display: flex;
+            gap: 1rem;
+
+            &-link {
+                &-svg {
+                    width: 3rem;
+                    fill: $color-highlight;
+                }
+            }
+        }
+    }
+
+    
+}

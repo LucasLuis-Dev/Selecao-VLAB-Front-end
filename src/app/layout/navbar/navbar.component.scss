@@ -5,6 +5,7 @@
     &__container {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         align-items: center;
         padding: 1.5rem $padding-sides;
 
@@ -15,23 +16,33 @@
             }
         }
 
-        &-button {
-            @include button;
-            text-decoration: none;
+        &-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            width: 22%;
 
-            &-svg {
-                width: 2rem;
-                fill: $color-white;
+            &-button {
+                @include button;
+                text-decoration: none;
+    
+                &-svg {
+                    width: 2rem;
+                    fill: $color-white;
+                }
+            }
+    
+            &-user {
+                width: 20%;
+                &-icon {
+                    width: 100%;
+                    fill: $color-white;
+                }
             }
         }
 
-        &-user {
-            width: 3%;
-            &-icon {
-                width: 100%;
-                fill: $color-white;
-            }
-        }
+        
 
         @media screen and (max-width: 480px) {
             &-logo {
@@ -41,11 +52,30 @@
                 }
             }
     
-            &-user {
-                width: 9.5%;
-                &-icon {
-                    width: 100%;
-                    fill: white;
+            &-box {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1rem;
+                width: 22%;
+    
+                &-button {
+                    @include button;
+                    text-decoration: none;
+        
+                    &-svg {
+                        width: 2rem;
+                        fill: $color-white;
+                    }
+                }
+        
+                &-user {
+                    width: 20%;
+                    &-icon {
+                        width: 100%;
+                        fill: $color-white;
+                    }
                 }
             }
         }
