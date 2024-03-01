@@ -4,6 +4,47 @@
     &__container {
        display: flex;
        flex-direction: column;
-       padding: 1rem $padding-sides; 
+       padding: 0rem $padding-sides; 
+
+       &-carousel {
+            width: 100%;
+
+            &-img {
+                width: 100%;
+                border-radius: 1rem;
+           
+            }
+
+       }
+
+       &-title-box {
+            display: flex;
+            justify-content: space-between;
+            padding:  1rem 0;
+            color: $color-white;
+            border-bottom: .1rem solid  rgba(128, 128, 128, 0.479);
+            margin-bottom: 2rem;
+
+            &-text {
+                font-weight: 600;
+            }
+       }
+
+       &-select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: $color-highlight;
+        border: none;
+        outline: none;
+        border-radius: 1rem;
+        padding: 1rem;
+        color: $color-white;
+        font-weight: 600;
+        background-image: url('../../../assets/images/iconizer-caret-down-solid.svg');
+        background-repeat: no-repeat;
+        background-position-x: 92%;
+        background-position-y: center;
+        background-size: 10%;
+       }
     }
 }

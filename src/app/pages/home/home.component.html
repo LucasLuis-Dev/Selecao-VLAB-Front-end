@@ -1,3 +1,18 @@
 <main class="home__container">
+    <figure class="home__container-carousel">
+        <img class="home__container-carousel-img" src="../../../assets/images/FREE GAMES.png" alt="">
+    </figure>
+    <div class="home__container-title-box">
+        <h1 class="home__container-title-box-text">All Games</h1>
+        
+        <select id="orderSelect" class="home__container-select" >
+          <option value="" disabled selected hidden>Ordernar por</option>
+          <option value="dataLancamento">Data de Lançamento</option>
+          <option value="popularidade">Popularidade</option>
+          <option value="nome">Nome (ordem alfabética)</option>
+          <option value="relevancia">Relevância</option>
+        </select>
+    </div>
+    
     <app-list-games [gamesList]="gamesList"></app-list-games>
 </main>

@@ -9,6 +9,7 @@ import { GamesService } from '../../services/games/games.service';
 export class HomeComponent implements OnInit {
 
   gamesList: any[] = [];
+  selectedOrderGames: string = '';
 
   constructor(private gamesService: GamesService) {}
 
