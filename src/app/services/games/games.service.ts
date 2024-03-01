@@ -22,7 +22,10 @@ export class GamesService {
     return this.http.get(this.baseUrl + "games/category/" + category)
   }
 
-  
+  getGamesByOrder(order: string) {
+    return this.http.get(this.baseUrl + "games/order/" + order)
+  }
+
 
   saveGameToFavorites(game: any) {
     let favorites: any[] = JSON.parse(localStorage.getItem('favoriteGames') || '[]');

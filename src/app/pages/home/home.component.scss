@@ -33,10 +33,12 @@
        &-select {
         -webkit-appearance: none;
         -moz-appearance: none;
+        width: 25rem;
         background-color: $color-highlight;
         border: none;
         outline: none;
         border-radius: 1rem;
+        font-size: 1.6rem;
         padding: 1rem;
         color: $color-white;
         font-weight: 600;
@@ -44,7 +46,7 @@
         background-repeat: no-repeat;
         background-position-x: 92%;
         background-position-y: center;
-        background-size: 10%;
+        background-size: 8%;
        }
     }
 }

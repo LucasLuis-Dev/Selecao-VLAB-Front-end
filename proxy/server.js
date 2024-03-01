@@ -50,6 +50,18 @@ app.get('/games/category/:category', async (req, res) => {
   }
 });
 
+app.get('/games/order/:order', async (req, res) => {
+  const order = req.params.order;
+
+  try {
+    const response = await axios.get(`https://www.freetogame.com/api/games?sort-by=${order}`);
+    res.json(response.data);
+  } catch (error) {
+    console.error('Erro ao obter os jogos por categoria:', error);
+    res.status(500).json({ error: 'Erro ao obter os jogos por categoria' });
+  }
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
 });
